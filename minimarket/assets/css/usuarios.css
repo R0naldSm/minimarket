@@ -1,0 +1,230 @@
+/* assets/css/usuarios.css - Estilos para Usuarios */
+
+/* Tabla de usuarios */
+.usuarios-table thead th {
+    background: linear-gradient(135deg, #8b5cf6, #6366f1);
+}
+
+.usuarios-table tbody tr:hover {
+    background-color: #ede9fe;
+}
+
+/* Info del usuario con avatar */
+.usuario-info {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.usuario-avatar {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #8b5cf6, #6366f1);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 1.2rem;
+    box-shadow: 0 2px 8px rgba(139,92,246,0.3);
+}
+
+.usuario-username {
+    font-family: 'Courier New', monospace;
+    font-weight: 600;
+    color: #6366f1;
+    background: #ede9fe;
+    padding: 0.3rem 0.8rem;
+    border-radius: 5px;
+}
+
+/* Badges de rol */
+.badge-danger {
+    background: linear-gradient(135deg, #ef4444, #dc2626);
+    color: white;
+}
+
+.badge-info {
+    background: linear-gradient(135deg, #3b82f6, #2563eb);
+    color: white;
+}
+
+/* Formulario de usuario */
+.usuario-form {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.usuario-form .form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.usuario-form .form-group label .icon {
+    font-size: 1.2rem;
+    margin-right: 0.3rem;
+}
+
+.usuario-form .form-control {
+    padding: 1rem;
+}
+
+/* Checkbox personalizado */
+.checkbox-label {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    cursor: pointer;
+    padding: 1rem;
+    background: #f9fafb;
+    border-radius: 8px;
+    border: 2px solid var(--border-color);
+    transition: all 0.3s;
+}
+
+.checkbox-label:hover {
+    background: #f3f4f6;
+    border-color: var(--primary-color);
+}
+
+.checkbox-label input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+
+.checkbox-label span {
+    font-weight: 600;
+    color: var(--dark-color);
+}
+
+/* Info box */
+.info-box {
+    background: linear-gradient(135deg, #dbeafe, #bfdbfe);
+    border: 2px solid #3b82f6;
+    border-radius: 10px;
+    padding: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.info-box h4 {
+    color: #1e40af;
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+
+.info-box ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.info-box li {
+    padding: 0.5rem 0;
+    color: #1e40af;
+    line-height: 1.6;
+}
+
+.info-box li strong {
+    color: #1e3a8a;
+}
+
+/* Card de información del usuario */
+.usuario-info-card {
+    background: linear-gradient(135deg, #f3f4f6, #e5e7eb);
+    border: 2px solid var(--border-color);
+    border-radius: 10px;
+    padding: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.usuario-info-card h4 {
+    color: var(--dark-color);
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+}
+
+.info-grid div {
+    background: white;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.info-grid strong {
+    display: block;
+    color: #6b7280;
+    font-size: 0.85rem;
+    margin-bottom: 0.3rem;
+}
+
+/* Text muted */
+.text-muted {
+    color: #6b7280;
+    font-size: 0.875rem;
+    margin-top: 0.3rem;
+    display: block;
+}
+
+/* Empty state */
+.usuarios-empty {
+    text-align: center;
+    padding: 2rem;
+}
+
+.usuarios-empty-icon {
+    font-size: 4rem;
+    opacity: 0.3;
+    margin-bottom: 1rem;
+}
+
+.usuarios-empty h3 {
+    color: #6b7280;
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.usuarios-empty p {
+    color: #9ca3af;
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.usuarios-table tbody tr {
+    animation: fadeIn 0.3s ease forwards;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .usuario-info {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .usuario-form .form-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .info-grid {
+        grid-template-columns: 1fr;
+    }
+}

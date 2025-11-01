@@ -55,6 +55,26 @@ CREATE TABLE IF NOT EXISTS detalle_ventas (
     FOREIGN KEY (producto_id) REFERENCES productos(id) ON DELETE SET NULL
 );
 
+-- Tabla de usuarios (NUEVA)
+CREATE TABLE IF NOT EXISTS usuarios (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nombre VARCHAR(100) NOT NULL,
+    usuario VARCHAR(50) UNIQUE NOT NULL,
+    password VARCHAR(255) NOT NULL,
+    rol ENUM('admin', 'cajero', 'vendedor') DEFAULT 'cajero',
+    activo TINYINT(1) DEFAULT 1,
+    fecha_creacion TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+-- Insertar usuarios por defecto (las contraseñas están hasheadas con password_hash)
+-- Contraseña para todos: admin123
+INSERT INTO usuarios (nombre, usuario, password, rol) VALUES
+('Administrador', 'admin', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 'superusuario'),
+('Cajero 1', 'cajero1', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 'cajero'),
+('Vendedor 1', 'vendedor1', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 'vendedor');
+
+
+
 -- Datos de ejemplo
 INSERT INTO categorias (nombre, descripcion) VALUES
 ('Bebidas', 'Bebidas alcohólicas y no alcohólicas'),
