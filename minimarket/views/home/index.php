@@ -31,11 +31,20 @@
         </div>
         
         <div style="margin-top: 2rem;">
-            <h3 style="margin-bottom: 1rem;">Accesos Rápidos</h3>
-            <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
-                <a href="index.php?controller=producto&action=crear" class="btn btn-primary">➕ Nuevo Producto</a>
-                <a href="index.php?controller=categoria&action=crear" class="btn btn-success">📁 Nueva Categoría</a>
-                <a href="index.php?controller=cliente&action=crear" class="btn btn-warning">👤 Nuevo Cliente</a>
+            <h3 style="margin-bottom: 1.5rem; color: var(--dark-color); font-size: 1.5rem;">⚡ Accesos Rápidos</h3>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem;">
+                <a href="index.php?controller=venta&action=nueva" class="btn btn-nueva-venta">
+                    🛒 Nueva Venta
+                </a>
+                <a href="index.php?controller=producto&action=crear" class="btn btn-primary" style="padding: 1rem 1.5rem;">
+                    ➕ Nuevo Producto
+                </a>
+                <a href="index.php?controller=categoria&action=crear" class="btn btn-info" style="padding: 1rem 1.5rem;">
+                    📁 Nueva Categoría
+                </a>
+                <a href="index.php?controller=cliente&action=crear" class="btn btn-warning" style="padding: 1rem 1.5rem;">
+                    👤 Nuevo Cliente
+                </a>
             </div>
         </div>
     </div>

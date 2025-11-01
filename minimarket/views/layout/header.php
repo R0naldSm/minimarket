@@ -49,7 +49,7 @@
                         <li><a href="index.php?controller=usuario&action=index">Usuarios</a></li>
                     <?php endif; ?>
                     <li class="user-menu">
-                        <span class="user-name">👤 <?php echo htmlspecialchars($_SESSION['usuario_nombre'] ?? 'Usuario'); ?></span>
+                        <span class="user-name"> <?php echo htmlspecialchars($_SESSION['usuario_nombre'] ?? 'Usuario'); ?></span>
                         <a href="index.php?controller=auth&action=logout" class="btn-logout">Salir</a>
                     </li>
                 </ul>

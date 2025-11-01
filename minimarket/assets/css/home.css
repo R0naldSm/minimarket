@@ -125,9 +125,75 @@
     gap: 1rem;
 }
 
+/* Botón destacado de Nueva Venta */
+/* Asegurar que el botón Nueva Venta se vea verde */
+.btn-nueva-venta {
+    background: linear-gradient(135deg, #10b981, #059669, #047857) !important;
+    color: white !important;
+    text-decoration: none !important;
+    font-size: 1.2rem !important;
+    padding: 1.2rem 2rem !important;
+    font-weight: 700 !important;
+    box-shadow: 
+        0 4px 15px rgba(16, 185, 129, 0.4),
+        0 2px 4px rgba(16, 185, 129, 0.2) !important;
+    border: none !important;
+    border-radius: 12px !important;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 0.5rem !important;
+    text-align: center !important;
+    position: relative !important;
+    overflow: hidden !important;
+    cursor: pointer !important;
+}
+
+.btn-nueva-venta::before {
+    content: '' !important;
+    position: absolute !important;
+    top: 0 !important;
+    left: -100% !important;
+    width: 100% !important;
+    height: 100% !important;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent) !important;
+    transition: left 0.7s ease !important;
+}
+
+.btn-nueva-venta:hover::before {
+    left: 100% !important;
+}
+
+.btn-nueva-venta:hover {
+    background: linear-gradient(135deg, #059669, #047857, #065f46) !important;
+    color: white !important;
+    transform: translateY(-4px) scale(1.02) !important;
+    box-shadow: 
+        0 8px 30px rgba(16, 185, 129, 0.6),
+        0 4px 8px rgba(16, 185, 129, 0.3) !important;
+    text-decoration: none !important;
+}
+
+.btn-nueva-venta:active {
+    transform: translateY(-1px) scale(1.01) !important;
+}
+
+/* Reset para asegurar que no haya estilos conflictivos */
+a.btn-nueva-venta {
+    all: unset !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+
+a.btn-nueva-venta * {
+    all: unset !important;
+}
+
 .quick-action-btn {
     padding: 1.2rem 1.5rem;
-    background: white;
+    background:white;
     border: 2px solid var(--border-color);
     border-radius: 10px;
     text-decoration: none;
