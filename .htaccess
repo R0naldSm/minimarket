@@ -1,0 +1,25 @@
+# .htaccess para proyecto Minimarket
+# Activa mod_rewrite y redirige rutas "limpias" a index.php
+
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    # Establecer index por defecto
+    DirectoryIndex index.php
+
+    # Si el archivo o directorio existe, servirlo directamente
+    RewriteCond %{REQUEST_FILENAME} -f [OR]
+    RewriteCond %{REQUEST_FILENAME} -d
+    RewriteRule ^ - [L]
+
+    # /controlador/accion  -> index.php?controller=controlador&action=accion
+    RewriteRule ^([^/]+)/([^/]+)/?$ index.php?controller=$1&action=$2 [L,QSA]
+
+    # /controlador  -> index.php?controller=controlador
+    RewriteRule ^([^/]+)/?$ index.php?controller=$1 [L,QSA]
+
+    # Fallback: todos los demás requests a index.php
+    RewriteRule ^(.*)$ index.php [L,QSA]
+</IfModule>
+
+# Si no está mod_rewrite habilitado, las URLs con querystring siguen funcionando
