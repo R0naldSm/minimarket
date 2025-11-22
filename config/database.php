@@ -15,7 +15,7 @@ define('DB_CHARSET', 'utf8mb4');
 
 // Configuración de la aplicación
 define('APP_NAME', 'Minimarket Bendición de Dios');
-define('APP_URL', 'http://localhost/minimarket/');
+define('APP_URL', 'http://localhost/minimarketBendiciondeDios/');
 define('APP_VERSION', '1.0.0');
 
 // Configuración de sesión
